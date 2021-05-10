@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="SekolahModelStoreContainer" CdmEntityContainer="DBSekolahEntities">
+    <EntitySetMapping Name="Admins">
+      <EntityTypeMapping TypeName="SekolahModel.Admin">
+        <MappingFragment StoreEntitySet="Admin">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="id_auth" ColumnName="id_auth" />
+          <ScalarProperty Name="Nama" ColumnName="Nama" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Auths">
+      <EntityTypeMapping TypeName="SekolahModel.Auth">
+        <MappingFragment StoreEntitySet="Auth">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Gurus">
+      <EntityTypeMapping TypeName="SekolahModel.Guru">
+        <MappingFragment StoreEntitySet="Guru">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="id_auth" ColumnName="id_auth" />
+          <ScalarProperty Name="Nama" ColumnName="Nama" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Jadwals">
+      <EntityTypeMapping TypeName="SekolahModel.Jadwal">
+        <MappingFragment StoreEntitySet="Jadwal">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Hari" ColumnName="Hari" />
+          <ScalarProperty Name="Jam_Mulai" ColumnName="Jam_Mulai" />
+          <ScalarProperty Name="Jam_Selesai" ColumnName="Jam_Selesai" />
+          <ScalarProperty Name="Mata_Pelajaran" ColumnName="Mata_Pelajaran" />
+          <ScalarProperty Name="Guru" ColumnName="Guru" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Mapels">
+      <EntityTypeMapping TypeName="SekolahModel.Mapel">
+        <MappingFragment StoreEntitySet="Mapel">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Nama" ColumnName="Nama" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Siswas">
+      <EntityTypeMapping TypeName="SekolahModel.Siswa">
+        <MappingFragment StoreEntitySet="Siswa">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="id_auth" ColumnName="id_auth" />
+          <ScalarProperty Name="Nama" ColumnName="Nama" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

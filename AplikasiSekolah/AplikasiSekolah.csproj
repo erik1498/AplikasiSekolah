@@ -1,0 +1,409 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{DF42F9C2-8368-40A9-8D11-123CE01CEFD1}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AplikasiSekolah</RootNamespace>
+    <AssemblyName>AplikasiSekolah</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Web.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.2\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.2\lib\net45\System.Web.Webpages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Deployment">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.2\lib\net45\System.Web.Webpages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.2\lib\net45\System.Web.Webpages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Helpers">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.2\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.2\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Global.asax" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <EntityDeploy Include="DBModel\DBModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>DBModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="DBModel\DBModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DBModel.edmx</DependentUpon>
+      <LastGenOutput>DBModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="DBModel\DBModel.edmx.diagram">
+      <DependentUpon>DBModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="DBModel\DBModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DBModel.edmx</DependentUpon>
+      <LastGenOutput>DBModel.cs</LastGenOutput>
+    </Content>
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Template\css\style.css" />
+    <Content Include="Template\docs\documentation.html" />
+    <Content Include="Template\docs\documentation.js" />
+    <Content Include="Template\gulpfile.js" />
+    <Content Include="Template\images\auth\lockscreen-bg.jpg" />
+    <Content Include="Template\images\auth\login-bg.jpg" />
+    <Content Include="Template\images\auth\register-bg.jpg" />
+    <Content Include="Template\images\dashboard\bg.png" />
+    <Content Include="Template\images\dashboard\face29.png" />
+    <Content Include="Template\images\dashboard\live.png" />
+    <Content Include="Template\images\faces\face1.jpg" />
+    <Content Include="Template\images\faces\face10.jpg" />
+    <Content Include="Template\images\faces\face11.jpg" />
+    <Content Include="Template\images\faces\face12.jpg" />
+    <Content Include="Template\images\faces\face13.jpg" />
+    <Content Include="Template\images\faces\face14.jpg" />
+    <Content Include="Template\images\faces\face15.jpg" />
+    <Content Include="Template\images\faces\face16.jpg" />
+    <Content Include="Template\images\faces\face17.jpg" />
+    <Content Include="Template\images\faces\face18.jpg" />
+    <Content Include="Template\images\faces\face19.jpg" />
+    <Content Include="Template\images\faces\face2.jpg" />
+    <Content Include="Template\images\faces\face20.jpg" />
+    <Content Include="Template\images\faces\face21.jpg" />
+    <Content Include="Template\images\faces\face22.jpg" />
+    <Content Include="Template\images\faces\face23.jpg" />
+    <Content Include="Template\images\faces\face24.jpg" />
+    <Content Include="Template\images\faces\face25.jpg" />
+    <Content Include="Template\images\faces\face26.jpg" />
+    <Content Include="Template\images\faces\face27.jpg" />
+    <Content Include="Template\images\faces\face28.png" />
+    <Content Include="Template\images\faces\face3.jpg" />
+    <Content Include="Template\images\faces\face4.jpg" />
+    <Content Include="Template\images\faces\face5.jpg" />
+    <Content Include="Template\images\faces\face6.jpg" />
+    <Content Include="Template\images\faces\face7.jpg" />
+    <Content Include="Template\images\faces\face8.jpg" />
+    <Content Include="Template\images\faces\face9.jpg" />
+    <Content Include="Template\images\favicon.png" />
+    <Content Include="Template\js\chart.js" />
+    <Content Include="Template\js\dashboard.js" />
+    <Content Include="Template\js\file-upload.js" />
+    <Content Include="Template\js\select2.js" />
+    <Content Include="Template\js\template.js" />
+    <Content Include="Template\js\typeahead.js" />
+    <Content Include="Template\pages\charts\chartjs.html" />
+    <Content Include="Template\pages\forms\basic_elements.html" />
+    <Content Include="Template\pages\icons\mdi.html" />
+    <Content Include="Template\pages\samples\lock-screen.html" />
+    <Content Include="Template\pages\samples\login-2.html" />
+    <Content Include="Template\pages\samples\login.html" />
+    <Content Include="Template\pages\samples\register-2.html" />
+    <Content Include="Template\pages\samples\register.html" />
+    <Content Include="Template\pages\tables\basic-table.html" />
+    <Content Include="Template\pages\ui-features\buttons.html" />
+    <Content Include="Template\pages\ui-features\typography.html" />
+    <Content Include="Template\partials\_footer.html" />
+    <Content Include="Template\partials\_horizontal-navbar.html" />
+    <Content Include="Template\vendors\base\vendor.bundle.base.css" />
+    <Content Include="Template\vendors\base\vendor.bundle.base.js" />
+    <Content Include="Template\vendors\chart.js\Chart.min.js" />
+    <Content Include="Template\vendors\chartjs-plugin-datalabels\chartjs-plugin-datalabels.js" />
+    <Content Include="Template\vendors\chartjs-plugin-datalabels\chartjs-plugin-datalabels.min.js" />
+    <Content Include="Template\vendors\jquery-file-upload\uploadfile.css" />
+    <Content Include="Template\vendors\justgage\justgage.js" />
+    <Content Include="Template\vendors\justgage\raphael-2.1.4.min.js" />
+    <Content Include="Template\vendors\jvectormap\jquery-jvectormap-world-mill-en.js" />
+    <Content Include="Template\vendors\jvectormap\jquery-jvectormap.css" />
+    <Content Include="Template\vendors\jvectormap\jquery-jvectormap.min.js" />
+    <Content Include="Template\vendors\mdi\css\materialdesignicons.min.css" />
+    <Content Include="Template\vendors\progressbar.js\progressbar.min.js" />
+    <Content Include="Template\vendors\raphael\raphael.min.js" />
+    <Content Include="Template\vendors\select2-bootstrap-theme\select2-bootstrap.min.css" />
+    <Content Include="Template\vendors\select2\select2.min.css" />
+    <Content Include="Template\vendors\select2\select2.min.js" />
+    <Content Include="Template\vendors\typeahead.js\typeahead.bundle.min.js" />
+    <Content Include="Web.config" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\DashboardAdminController.cs" />
+    <Compile Include="Controllers\DashboardGuruController.cs" />
+    <Compile Include="Controllers\DashboardSiswaController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="DBModel\Admin.cs">
+      <DependentUpon>DBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DBModel\Auth.cs">
+      <DependentUpon>DBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DBModel\DBModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DBModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DBModel\DBModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DBModel\DBModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DBModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="DBModel\Guru.cs">
+      <DependentUpon>DBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DBModel\Jadwal.cs">
+      <DependentUpon>DBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DBModel\Mapel.cs">
+      <DependentUpon>DBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DBModel\Siswa.cs">
+      <DependentUpon>DBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AuthModel.cs" />
+    <Compile Include="Models\GuruModel.cs" />
+    <Compile Include="Models\JadwalModel.cs" />
+    <Compile Include="Models\MapelModel.cs" />
+    <Compile Include="Models\SiswaModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\web.config" />
+    <Content Include="packages.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\Login.cshtml" />
+    <Content Include="Template\.DS_Store" />
+    <Content Include="Template\css\.DS_Store" />
+    <Content Include="Template\css\maps\.DS_Store" />
+    <Content Include="Template\css\maps\horizontal-layout-light\style.css.map" />
+    <Content Include="Template\css\maps\style.css.map" />
+    <Content Include="Template\fonts\.DS_Store" />
+    <Content Include="Template\fonts\sourcesanspro\.DS_Store" />
+    <Content Include="Template\fonts\sourcesanspro\SourceSansPro-Black.eot" />
+    <Content Include="Template\fonts\sourcesanspro\SourceSansPro-Black.ttf" />
+    <Content Include="Template\fonts\sourcesanspro\SourceSansPro-Black.woff" />
+    <Content Include="Template\fonts\sourcesanspro\SourceSansPro-Black.woff2" />
+    <Content Include="Template\fonts\sourcesanspro\SourceSansPro-Bold.eot" />
+    <Content Include="Template\fonts\sourcesanspro\SourceSansPro-Bold.ttf" />
+    <Content Include="Template\fonts\sourcesanspro\SourceSansPro-Bold.woff" />
+    <Content Include="Template\fonts\sourcesanspro\SourceSansPro-Bold.woff2" />
+    <Content Include="Template\fonts\sourcesanspro\SourceSansPro-ExtraLight.eot" />
+    <Content Include="Template\fonts\sourcesanspro\SourceSansPro-ExtraLight.ttf" />
+    <Content Include="Template\fonts\sourcesanspro\SourceSansPro-ExtraLight.woff" />
+    <Content Include="Template\fonts\sourcesanspro\SourceSansPro-ExtraLight.woff2" />
+    <Content Include="Template\fonts\sourcesanspro\SourceSansPro-Light.eot" />
+    <Content Include="Template\fonts\sourcesanspro\SourceSansPro-Light.ttf" />
+    <Content Include="Template\fonts\sourcesanspro\SourceSansPro-Light.woff" />
+    <Content Include="Template\fonts\sourcesanspro\SourceSansPro-Light.woff2" />
+    <Content Include="Template\fonts\sourcesanspro\SourceSansPro-Regular.eot" />
+    <Content Include="Template\fonts\sourcesanspro\SourceSansPro-Regular.ttf" />
+    <Content Include="Template\fonts\sourcesanspro\SourceSansPro-Regular.woff" />
+    <Content Include="Template\fonts\sourcesanspro\SourceSansPro-Regular.woff2" />
+    <Content Include="Template\fonts\sourcesanspro\SourceSansPro-SemiBold.eot" />
+    <Content Include="Template\fonts\sourcesanspro\SourceSansPro-SemiBold.ttf" />
+    <Content Include="Template\fonts\sourcesanspro\SourceSansPro-SemiBold.woff" />
+    <Content Include="Template\fonts\sourcesanspro\SourceSansPro-SemiBold.woff2" />
+    <Content Include="Template\images\.DS_Store" />
+    <Content Include="Template\images\auth\.DS_Store" />
+    <Content Include="Template\images\dashboard\.DS_Store" />
+    <Content Include="Template\images\faces\.DS_Store" />
+    <Content Include="Template\images\logo-mini.svg" />
+    <Content Include="Template\images\logo.svg" />
+    <Content Include="Template\js\.DS_Store" />
+    <Content Include="Template\package-lock.json" />
+    <Content Include="Template\package.json" />
+    <Content Include="Template\pages\.DS_Store" />
+    <Content Include="Template\pages\charts\.DS_Store" />
+    <Content Include="Template\pages\forms\.DS_Store" />
+    <Content Include="Template\pages\icons\.DS_Store" />
+    <Content Include="Template\pages\samples\.DS_Store" />
+    <Content Include="Template\pages\tables\.DS_Store" />
+    <Content Include="Template\pages\ui-features\.DS_Store" />
+    <Content Include="Template\scss\.DS_Store" />
+    <Content Include="Template\scss\common.scss" />
+    <Content Include="Template\scss\components\.DS_Store" />
+    <Content Include="Template\scss\components\plugin-overrides\.DS_Store" />
+    <Content Include="Template\scss\components\plugin-overrides\_jvectormap.scss" />
+    <Content Include="Template\scss\components\plugin-overrides\_progressbar-js.scss" />
+    <Content Include="Template\scss\components\plugin-overrides\_typeahead.scss" />
+    <Content Include="Template\scss\components\_bootstrap-progress.scss" />
+    <Content Include="Template\scss\components\_buttons.scss" />
+    <Content Include="Template\scss\components\_cards.scss" />
+    <Content Include="Template\scss\components\_checkbox-radio.scss" />
+    <Content Include="Template\scss\components\_dropdown.scss" />
+    <Content Include="Template\scss\components\_forms.scss" />
+    <Content Include="Template\scss\components\_icons.scss" />
+    <Content Include="Template\scss\components\_lists.scss" />
+    <Content Include="Template\scss\components\_preview.scss" />
+    <Content Include="Template\scss\components\_tables.scss" />
+    <Content Include="Template\scss\components\_tabs.scss" />
+    <Content Include="Template\scss\components\_toggle-switch.scss" />
+    <Content Include="Template\scss\landing-screens\_auth.scss" />
+    <Content Include="Template\scss\mixins\.DS_Store" />
+    <Content Include="Template\scss\mixins\_animation.scss" />
+    <Content Include="Template\scss\mixins\_blockqoute.scss" />
+    <Content Include="Template\scss\mixins\_buttons.scss" />
+    <Content Include="Template\scss\mixins\_cards.scss" />
+    <Content Include="Template\scss\mixins\_menu.scss" />
+    <Content Include="Template\scss\mixins\_misc.scss" />
+    <Content Include="Template\scss\style.scss" />
+    <Content Include="Template\scss\_background.scss" />
+    <Content Include="Template\scss\_dashboard.scss" />
+    <Content Include="Template\scss\_demo.scss" />
+    <Content Include="Template\scss\_fonts.scss" />
+    <Content Include="Template\scss\_footer.scss" />
+    <Content Include="Template\scss\_functions.scss" />
+    <Content Include="Template\scss\_horizontal-menu.scss" />
+    <Content Include="Template\scss\_horizontal-wrappers.scss" />
+    <Content Include="Template\scss\_misc.scss" />
+    <Content Include="Template\scss\_reset.scss" />
+    <Content Include="Template\scss\_typography.scss" />
+    <Content Include="Template\scss\_utilities.scss" />
+    <Content Include="Template\scss\_variables.scss" />
+    <Content Include="Template\vendors\.DS_Store" />
+    <Content Include="Template\vendors\base\bootstrap.min.js.map" />
+    <Content Include="Template\vendors\mdi\css\materialdesignicons.min.css.map" />
+    <Content Include="Template\vendors\mdi\fonts\materialdesignicons-webfont.eot" />
+    <Content Include="Template\vendors\mdi\fonts\materialdesignicons-webfont.ttf" />
+    <Content Include="Template\vendors\mdi\fonts\materialdesignicons-webfont.woff" />
+    <Content Include="Template\vendors\mdi\fonts\materialdesignicons-webfont.woff2" />
+    <Content Include="Template\vendors\progressbar.js\progressbar.min.js.map" />
+    <Content Include="Views\DashboardAdmin\Index.cshtml" />
+    <Content Include="Views\DashboardSiswa\Index.cshtml" />
+    <Content Include="Views\DashboardGuru\Index.cshtml" />
+    <Content Include="Views\DashboardAdmin\ListSiswa.cshtml" />
+    <Content Include="Views\Shared\_Header.cshtml" />
+    <Content Include="Views\Shared\_Footer.cshtml" />
+    <Content Include="Views\DashboardAdmin\TambahSiswa.cshtml" />
+    <Content Include="Views\Home\Error.cshtml" />
+    <Content Include="Views\DashboardAdmin\UbahSiswa.cshtml" />
+    <Content Include="Views\DashboardAdmin\ListGuru.cshtml" />
+    <Content Include="Views\DashboardAdmin\TambahGuru.cshtml" />
+    <Content Include="Views\DashboardAdmin\UbahGuru.cshtml" />
+    <Content Include="Views\DashboardAdmin\ListMapel.cshtml" />
+    <Content Include="Views\DashboardAdmin\TambahMapel.cshtml" />
+    <Content Include="Views\DashboardAdmin\UbahMapel.cshtml" />
+    <Content Include="Views\DashboardAdmin\TambahJadwal.cshtml" />
+    <Content Include="Views\DashboardAdmin\UbahJadwal.cshtml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>49157</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:49157/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

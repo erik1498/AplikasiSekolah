@@ -1,0 +1,38 @@
+﻿@model AplikasiSekolah.Models.MapelModel
+@{
+    ViewBag.Title = "Tambah Mata Pelajaran | Aplikasi Sekolah";
+}
+
+<div class="container-scroller">
+    @Html.Partial("_Header")
+    <!-- partial -->
+    <div class="container-fluid page-body-wrapper">
+        <div class="main-panel">
+            <div class="content-wrapper">
+                <div class="row">
+                    <div class="col-md-6 grid-margin stretch-card">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title">Tambah Mata Pelajaran</h4>
+                                @using (Html.BeginForm("TambahMapel", "DashboardAdmin", FormMethod.Post, new { @class = "form-samples" }))
+                                {
+                                    <div class="form-group">
+                                        @Html.LabelFor(Model => Model.Nama)
+                                        @Html.TextBoxFor(Model => Model.Nama, null, new { @class = "form-control", @placeholder = "Masukan Nama Guru" })
+                                        @Html.ValidationMessageFor(Model => Model.Nama, null, new { @class = "text-danger" })
+                                    </div>
+                                    <button type="submit" class="btn btn-primary mr-2">
+                                        <i class="mdi mdi-content-save"></i>
+                                        Simpan
+                                    </button>
+                                    <a href=@Url.Action("ListMapel","DashboardAdmin") class="btn btn-light">Batal</a>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            @Html.Partial("_Footer")
+        </div>
+    </div>
+</div>

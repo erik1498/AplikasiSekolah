@@ -1,0 +1,72 @@
+﻿@model IEnumerable<AplikasiSekolah.DBModel.Siswa>
+
+@{
+    ViewBag.Title = "Daftar Siswa | Aplikasi Sekolah";
+}
+
+<div class="container-scroller">
+    @Html.Partial("_Header")
+    <!-- partial -->
+    <div class="container-fluid page-body-wrapper">
+        <div class="main-panel">
+            <div class="content-wrapper">
+                <div class="row grid-margin">
+                    <div class="col-lg-12">
+                        <a class="btn btn-danger" href=@Url.Action("Index")>
+                            <i class="mdi mdi-arrow-left"></i>
+                            Kembali
+                        </a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12 grid-margin stretch-card">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title">Daftar Siswa</h4>
+                                <a class="btn btn-primary" href=@Url.Action("TambahSiswa")>
+                                    <i class="mdi mdi-plus"></i>
+                                    Tambah Siswa
+                                </a>
+                                <div class="table-responsive">
+                                    <table class="table table-striped">
+                                        <thead>
+                                            <tr>
+                                                <th>
+                                                    Nama
+                                                </th>
+                                                <th>
+                                                    Aksi
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @foreach (var item in Model)
+                                            {
+                                                <tr>
+                                                    <td>
+                                                        @item.Nama
+                                                    </td>
+                                                    <td>
+                                                        <a class="btn btn-warning" href=@Url.Action("UbahSiswa", "DashboardAdmin", new { id = @item.id})>
+                                                            <i class="mdi mdi-pencil"></i>
+                                                            Edit
+                                                        </a>
+                                                        <a class="btn btn-danger" href=@Url.Action("HapusSiswa", "DashboardAdmin", new { id = @item.id})>
+                                                            <i class="mdi mdi-delete"></i>
+                                                            Hapus
+                                                        </a>
+                                                    </td>
+                                                </tr>
+                                            }
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          @Html.Partial("_Footer")
+        </div>
+    </div>
+</div>

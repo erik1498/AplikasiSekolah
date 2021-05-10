@@ -1,0 +1,49 @@
+﻿
+@model AplikasiSekolah.Models.SiswaModel
+@{
+    ViewBag.Title = "Tambah Siswa | Aplikasi Sekolah";
+}
+
+<div class="container-scroller">
+    @Html.Partial("_Header")
+    <!-- partial -->
+    <div class="container-fluid page-body-wrapper">
+        <div class="main-panel">
+            <div class="content-wrapper">
+                <div class="row">
+                    <div class="col-md-6 grid-margin stretch-card">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title">Tambah Siswa</h4>
+                                @using (Html.BeginForm("TambahSiswa", "DashboardAdmin", FormMethod.Post,new { @class = "form-samples"}))
+                                {
+                                    <div class="form-group">
+                                        @Html.LabelFor(Model => Model.Nama)
+                                        @Html.TextBoxFor(Model => Model.Nama, null, new { @class = "form-control", @placeholder = "Masukan Nama Siswa" })
+                                        @Html.ValidationMessageFor(Model => Model.Nama, null, new { @class = "text-danger" })
+                                    </div>
+                                    <div class="form-group">
+                                        @Html.LabelFor(Model => Model.username)
+                                        @Html.TextBoxFor(Model => Model.username, null, new { @class = "form-control", @placeholder = "Masukan Username Siswa" })
+                                        @Html.ValidationMessageFor(Model => Model.username, null, new { @class = "text-danger" })
+                                    </div>
+                                    <div class="form-group">
+                                        @Html.LabelFor(Model => Model.password)
+                                        @Html.PasswordFor(Model => Model.password, new { @class = "form-control", @placeholder = "Masukan Password Siswa" })
+                                        @Html.ValidationMessageFor(Model => Model.password, null, new { @class = "text-danger" })
+                                    </div>
+                                    <button type="submit" class="btn btn-primary mr-2">
+                                        <i class="mdi mdi-content-save"></i>
+                                        Simpan
+                                    </button>
+                                    <a href=@Url.Action("ListSiswa","DashboardAdmin") class="btn btn-light">Batal</a>
+                                    }
+                            </div>
+                        </div>
+                     </div>
+                </div>
+            </div>
+            @Html.Partial("_Footer")
+        </div>
+    </div>
+</div>

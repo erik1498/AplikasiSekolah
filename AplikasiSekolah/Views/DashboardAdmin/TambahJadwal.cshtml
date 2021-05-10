@@ -1,0 +1,59 @@
+﻿@model AplikasiSekolah.Models.JadwalModel
+
+@{
+    ViewBag.Title = "Tambah Jadwal | Aplikasi Sekolah";
+}
+
+<div class="container-scroller">
+    @Html.Partial("_Header")
+    <!-- partial -->
+    <div class="container-fluid page-body-wrapper">
+        <div class="main-panel">
+            <div class="content-wrapper">
+                <div class="row">
+                    <div class="col-md-6 grid-margin stretch-card">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="card-title">Tambah Mata Pelajaran</h4>
+                                @using (Html.BeginForm("TambahJadwal", "DashboardAdmin", FormMethod.Post, new { @class = "form-samples" }))
+                                {
+                                    <div class="form-group">
+                                        @Html.LabelFor(Model => Model.Hari)
+                                        @Html.TextBoxFor(Model => Model.Hari, null, new { @class = "form-control", @placeholder = "Masukan Hari" })
+                                        @Html.ValidationMessageFor(Model => Model.Hari, null, new { @class = "text-danger" })
+                                    </div>
+                                    <div class="form-group">
+                                        @Html.LabelFor(Model => Model.Jam_Mulai)
+                                        @Html.TextBoxFor(Model => Model.Jam_Mulai, null, new { @class = "form-control", @placeholder = "Masukan Jam Mulai" })
+                                        @Html.ValidationMessageFor(Model => Model.Jam_Mulai, null, new { @class = "text-danger" })
+                                    </div>
+                                    <div class="form-group">
+                                        @Html.LabelFor(Model => Model.Jam_Selesai)
+                                        @Html.TextBoxFor(Model => Model.Jam_Selesai, null, new { @class = "form-control", @placeholder = "Masukan Jam Selesai" })
+                                        @Html.ValidationMessageFor(Model => Model.Jam_Selesai, null, new { @class = "text-danger" })
+                                    </div>
+                                    <div class="form-group">
+                                        @Html.LabelFor(Model => Model.Mata_Pelajaran)
+                                        @Html.DropDownListFor(Model => Model.Mata_Pelajaran, new SelectList(ViewBag.Mapel, "id", "Nama"), new { @class = "form-control" })
+                                        @Html.ValidationMessageFor(Model => Model.Mata_Pelajaran, null, new { @class = "text-danger" })
+                                    </div>
+                                    <div class="form-group">
+                                        @Html.LabelFor(Model => Model.Guru)
+                                        @Html.DropDownListFor(Model => Model.Guru, new SelectList(ViewBag.Guru, "id", "Nama"), new { @class = "form-control" })
+                                        @Html.ValidationMessageFor(Model => Model.Guru, null, new { @class = "text-danger" })
+                                    </div>
+                                    <button type="submit" class="btn btn-primary mr-2">
+                                        <i class="mdi mdi-content-save"></i>
+                                        Simpan
+                                    </button>
+                                    <a href=@Url.Action("Index","DashboardAdmin") class="btn btn-light">Batal</a>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            @Html.Partial("_Footer")
+        </div>
+    </div>
+</div>
